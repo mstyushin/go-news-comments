@@ -4,18 +4,19 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"go-news-comments/pkg/storage"
 	"log"
 	"os"
 	"testing"
 	"time"
+
+	"github.com/mstyushin/go-news-comments/pkg/storage"
 
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/stretchr/testify/assert"
 )
 
-const dbURL = "postgres://postgres@localhost:5432/comments?sslmode=disable"
+const dbURL = "postgres://postgres@localhost:5433/comments?sslmode=disable"
 
 var (
 	s             *DB

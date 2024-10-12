@@ -5,9 +5,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"go-news-comments/pkg/config"
-	"go-news-comments/pkg/storage"
-	"go-news-comments/pkg/storage/pg"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -15,6 +12,10 @@ import (
 	"os"
 	"testing"
 	"time"
+
+	"github.com/mstyushin/go-news-comments/pkg/config"
+	"github.com/mstyushin/go-news-comments/pkg/storage"
+	"github.com/mstyushin/go-news-comments/pkg/storage/pg"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/stretchr/testify/assert"

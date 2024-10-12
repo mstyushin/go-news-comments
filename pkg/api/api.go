@@ -3,11 +3,12 @@ package api
 import (
 	"context"
 	"fmt"
-	"go-news-comments/pkg/config"
-	"go-news-comments/pkg/storage"
 	"log"
 	"net"
 	"net/http"
+
+	"github.com/mstyushin/go-news-comments/pkg/config"
+	"github.com/mstyushin/go-news-comments/pkg/storage"
 
 	"github.com/gorilla/mux"
 )

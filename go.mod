@@ -1,4 +1,4 @@
-module go-news-comments
+module github.com/mstyushin/go-news-comments
 
 go 1.22
 

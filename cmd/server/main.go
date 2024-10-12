@@ -2,14 +2,15 @@ package main
 
 import (
 	"context"
-	"go-news-comments/pkg/api"
-	"go-news-comments/pkg/config"
-	"go-news-comments/pkg/storage"
-	"go-news-comments/pkg/storage/pg"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/mstyushin/go-news-comments/pkg/api"
+	"github.com/mstyushin/go-news-comments/pkg/config"
+	"github.com/mstyushin/go-news-comments/pkg/storage"
+	"github.com/mstyushin/go-news-comments/pkg/storage/pg"
 )
 
 const (

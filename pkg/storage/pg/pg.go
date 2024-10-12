@@ -3,8 +3,9 @@ package pg
 import (
 	"context"
 	"errors"
-	"go-news-comments/pkg/storage"
 	"log"
+
+	"github.com/mstyushin/go-news-comments/pkg/storage"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 )

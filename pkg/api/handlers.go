@@ -2,10 +2,11 @@ package api
 
 import (
 	"encoding/json"
-	"go-news-comments/pkg/storage"
 	"net/http"
 	"strconv"
 	"time"
+
+	"github.com/mstyushin/go-news-comments/pkg/storage"
 
 	"github.com/gorilla/mux"
 )
