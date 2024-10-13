@@ -36,7 +36,7 @@ ifeq ($(PG_TEST_STARTED),0)
 endif
 
 build:
-	@go mod tidy && go build -ldflags="-X 'github.com/mstyushin/go-news-comments/pkg/config.Version=$(VERSION)' -X 'github.com/mstyushin/go-news-comments/pkg/config.Hash=$(HASHCOMMIT)' -X 'github.com/mstyushin/go-news-comments/pkg/config.VersionDate=$(VERSIONDATE)'" -o bin/$(APP_NAME) github.com/mstyushin/go-news-comments/cmd/server
+	@go mod tidy && go build -ldflags="-X 'github.com/mstyushin/$(APP_NAME)/pkg/config.Version=$(VERSION)' -X 'github.com/mstyushin/$(APP_NAME)/pkg/config.Hash=$(HASHCOMMIT)' -X 'github.com/mstyushin/$(APP_NAME)/pkg/config.VersionDate=$(VERSIONDATE)'" -o bin/$(APP_NAME) github.com/mstyushin/$(APP_NAME)/cmd/server
 	@chmod +x bin/$(APP_NAME)
 
 run: build pg-run
@@ -55,3 +55,10 @@ clean: stop
 	@rm -f /tmp/$(APP_NAME).pid
 	docker stop db-comments || docker stop db-comments-test || true
 	docker container prune -f && docker volume prune -f
+
+docker-image:
+	docker build . -t  mstyushin/$(APP_NAME):$(VERSION) -t mstyushin/$(APP_NAME):latest
+
+docker-push:
+	docker push mstyushin/$(APP_NAME):$(VERSION)
+	docker push mstyushin/$(APP_NAME):latest
